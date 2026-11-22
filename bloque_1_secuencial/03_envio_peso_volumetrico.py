@@ -1,0 +1,38 @@
+# Costo de envío con peso volumétrico
+
+def main():
+    PR = 0.0
+    L = 0.0
+    A = 0.0
+    H = 0.0
+    PV = 0.0
+    PC = 0.0
+    CT = 0.0
+
+    # Ejercicio: Costo de envío con peso volumétrico
+    # Variables y datos del problema
+    # Entrada de datos y validaciones
+    print(str("Ingrese el peso real en kg:"), sep="")
+    PR = float(input())
+    print(str("Ingrese largo en cm:"), sep="")
+    L = float(input())
+    print(str("Ingrese ancho en cm:"), sep="")
+    A = float(input())
+    print(str("Ingrese alto en cm:"), sep="")
+    H = float(input())
+    # Proceso y cálculos
+    if PR < 0  or  L < 0  or  A < 0  or  H < 0:
+        print(str("Datos no validos"), sep="")
+    else:
+        PV = (L * A * H) / 5000
+        if PR >= PV:
+            PC = PR
+        else:
+            PC = PV
+        CT = PC * 2.50
+        print(str("Peso volumetrico: "), str(PV), str(" kg"), sep="")
+        print(str("Peso a cobrar: "), str(PC), str(" kg"), sep="")
+        print(str("Costo total: $"), str(CT), sep="")
+
+if __name__ == "__main__":
+    main()

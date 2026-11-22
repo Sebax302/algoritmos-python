@@ -1,0 +1,58 @@
+# Costo total de un viaje con peajes
+
+def main():
+    DIS = 0.0
+    CON = 0.0
+    PCL = 0.0
+    LIT = 0.0
+    CC = 0.0
+    CP = 0.0
+    CTP = 0.0
+    CT = 0.0
+    NP = 0
+
+    # Ejercicio: Costo total de un viaje con peajes
+    # Variables y datos del problema
+    # Entrada de datos y validaciones
+    print(str("Ingrese la distancia del viaje en km:"), sep="")
+    DIS = float(input())
+    # Proceso y cálculos
+    while DIS <= 0:
+        print(str("La distancia debe ser mayor que 0"), sep="")
+        print(str("Ingrese la distancia del viaje en km:"), sep="")
+        DIS = float(input())
+    print(str("Ingrese el rendimiento del auto en km por litro:"), sep="")
+    CON = float(input())
+    while CON <= 0:
+        print(str("El rendimiento debe ser mayor que 0"), sep="")
+        print(str("Ingrese el rendimiento del auto en km por litro:"), sep="")
+        CON = float(input())
+    print(str("Ingrese el precio del combustible por litro:"), sep="")
+    PCL = float(input())
+    while PCL < 0:
+        print(str("El precio no puede ser negativo"), sep="")
+        print(str("Ingrese el precio del combustible por litro:"), sep="")
+        PCL = float(input())
+    print(str("Ingrese la cantidad de peajes:"), sep="")
+    NP = int(input())
+    while NP < 0:
+        print(str("La cantidad de peajes no puede ser negativa"), sep="")
+        print(str("Ingrese la cantidad de peajes:"), sep="")
+        NP = int(input())
+    print(str("Ingrese el costo unitario de cada peaje:"), sep="")
+    CP = float(input())
+    while CP < 0:
+        print(str("El costo del peaje no puede ser negativo"), sep="")
+        print(str("Ingrese el costo unitario de cada peaje:"), sep="")
+        CP = float(input())
+    LIT = DIS / CON
+    CC = LIT * PCL
+    CTP = NP * CP
+    CT = CC + CTP
+    print(str("Litros necesarios: "), str(LIT), sep="")
+    print(str("Costo de combustible: $"), str(CC), sep="")
+    print(str("Costo de peajes: $"), str(CTP), sep="")
+    print(str("Costo total del viaje: $"), str(CT), sep="")
+
+if __name__ == "__main__":
+    main()
