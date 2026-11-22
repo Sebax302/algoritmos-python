@@ -1,0 +1,43 @@
+# Bono por productividad
+
+def main():
+    SB = 0.0
+    PRO = 0.0
+    PB = 0.0
+    BONO = 0.0
+    TOT = 0.0
+
+    # Ejercicio: Bono por productividad
+    # Variables y datos del problema
+    # Entrada de datos y validaciones
+    print(str("Ingrese el sueldo base:"), sep="")
+    SB = float(input())
+    # Proceso y cálculos
+    while SB < 0:
+        print(str("El sueldo base no puede ser negativo"), sep="")
+        print(str("Ingrese el sueldo base:"), sep="")
+        SB = float(input())
+    print(str("Ingrese el porcentaje de productividad (0 a 100):"), sep="")
+    PRO = float(input())
+    while PRO < 0  or  PRO > 100:
+        print(str("La productividad debe estar entre 0 y 100"), sep="")
+        print(str("Ingrese el porcentaje de productividad (0 a 100):"), sep="")
+        PRO = float(input())
+    if PRO >= 90:
+        PB = 20
+    else:
+        if PRO >= 70:
+            PB = 10
+        else:
+            if PRO >= 50:
+                PB = 5
+            else:
+                PB = 0
+    BONO = SB * (PB / 100)
+    TOT = SB + BONO
+    print(str("Porcentaje de bono aplicado: "), str(PB), str("%"), sep="")
+    print(str("Bono: $"), str(BONO), sep="")
+    print(str("Total a pagar: $"), str(TOT), sep="")
+
+if __name__ == "__main__":
+    main()

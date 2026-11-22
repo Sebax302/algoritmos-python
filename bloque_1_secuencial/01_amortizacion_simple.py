@@ -1,0 +1,38 @@
+# Amortización de préstamo simple
+
+def main():
+    MON = 0.0
+    TASA = 0.0
+    INT = 0.0
+    CUO = 0.0
+    MES = 0
+
+    # Ejercicio: Amortización de préstamo simple
+    # Variables y datos del problema
+    # Entrada de datos y validaciones
+    print(str("Ingrese el monto del prestamo:"), sep="")
+    MON = float(input())
+    # Proceso y cálculos
+    while MON <= 0:
+        print(str("El monto debe ser mayor que 0"), sep="")
+        print(str("Ingrese el monto del prestamo:"), sep="")
+        MON = float(input())
+    print(str("Ingrese la tasa de interes mensual (%):"), sep="")
+    TASA = float(input())
+    while TASA < 0:
+        print(str("La tasa no puede ser negativa"), sep="")
+        print(str("Ingrese la tasa de interes mensual (%):"), sep="")
+        TASA = float(input())
+    print(str("Ingrese el numero de meses:"), sep="")
+    MES = int(input())
+    while MES <= 0:
+        print(str("El numero de meses debe ser mayor que 0"), sep="")
+        print(str("Ingrese el numero de meses:"), sep="")
+        MES = int(input())
+    INT = MON * (TASA / 100) * MES
+    CUO = (MON + INT) / MES
+    print(str("Interes total: $"), str(INT), sep="")
+    print(str("Cuota mensual: $"), str(CUO), sep="")
+
+if __name__ == "__main__":
+    main()
